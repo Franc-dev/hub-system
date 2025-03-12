@@ -49,7 +49,7 @@ export default function Navbar() {
       className={`fixed w-full z-30 transition-all duration-300  ${
         scrolled
           ? "bg-white bg-opacity-95 shadow-md py-2"
-          : "bg-transparent py-4"
+          : "bg-transparent py-4 text-white"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,9 +71,13 @@ export default function Navbar() {
                 href={item.path}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                   pathname === item.path
-                    ? "text-orange-500 font-semibold"
-                    : "text-gray-700 hover:text-orange-500"
-                }`}
+                    ? "text-orange-200 font-semibold"
+                    : "text-gray-200 hover:text-orange-500"
+                },
+                ${
+                scrolled ? "text-gray-800" : "text-gray-200"
+                }
+                `}
               >
                 {item.name}
               </Link>
